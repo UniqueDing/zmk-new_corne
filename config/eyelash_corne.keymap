@@ -42,46 +42,6 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
-        esc_ctl: mod_tap_0 {
-            compatible = "zmk,behavior-hold-tap";
-            display-name = "tab ESC hold CTRL";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&kp LCTRL>, <&kp ESC>;
-        };
-        tab_nav: layer_tap_0 {
-            compatible = "zmk,behavior-hold-tap";
-            display-name = "tab TAB hold layer NAV";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo NAV>, <&kp TAB>;
-        };
-        bspc_num: layer_tap_1 {
-            compatible = "zmk,behavior-hold-tap";
-            display-name = "tab BSPC hold layer NUM";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <NUM>, <&kp BSPC>;
-        };
-        sqt_sym: layer_tap_2 {
-            compatible = "zmk,behavior-hold-tap";
-            display-name = "tab SQT hold layer SYM";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <SYM>, <&kp SQT>;
-        };
-        del_fn: layer_tap_3 {
-            compatible = "zmk,behavior-hold-tap";
-            display-name = "tab DEL hold layer FN";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <FN>, <&kp DEL>;
-        };
     };
 
     keymap {
@@ -90,20 +50,20 @@
       default_layer {
         display-name = "QWERTY";
         bindings = <
-&tab_nav  &kp Q    &kp W    &kp E    &kp R    &kp T                      &mmv MOVE_UP                 &kp Y    &kp U    &kp I     &kp O    &kp P     &kp BSLH
-&esc_ctl  &kp A    &kp S    &kp D    &kp F    &kp G       &mmv MOVE_LEFT &mmv LCLK    &mmv MOVE_RIGHT &kp H    &kp J    &kp K     &kp L    &kp SEMI  &sqt_sym
-&sft_cap  &kp Z    &kp X    &kp C    &kp V    &kp B  &none               &mmv MOVE_DOWN               &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RSHIFT
-                            &kp LGUI &kp LALT &kp SPACE                                               &bspc_num &kp ENTER &del_fn
+&lt NAV TAB    &kp Q    &kp W    &kp E    &kp R    &kp T                      &mmv MOVE_UP                 &kp Y    &kp U    &kp I     &kp O    &kp P     &kp BSLH
+&mt LCTRL ESC  &kp A    &kp S    &kp D    &kp F    &kp G       &mmv MOVE_LEFT &mmv LCLK    &mmv MOVE_RIGHT &kp H    &kp J    &kp K     &kp L    &kp SEMI  &sqt_sym
+&sft_cap       &kp Z    &kp X    &kp C    &kp V    &kp B  &none               &mmv MOVE_DOWN               &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RSHIFT
+                                 &kp LGUI &kp LALT &kp SPACE                                               &lt NUM BSPC &kp ENTER &lt FN DEL
         >;
       };
 
       colmak_layer {
         display-name = "COL";
         bindings = <
-&tab_nav  &kp Q    &kp W    &kp F    &kp P    &kp G                      &mmv MOVE_UP                 &kp J    &kp L    &kp U     &kp Y    &kp SEMI  &kp BSLH
-&esc_ctl  &kp A    &kp R    &kp S    &kp T    &kp D       &mmv MOVE_LEFT &mmv LCLK    &mmv MOVE_RIGHT &kp H    &kp N    &kp E     &kp I    &kp O     &sqt_sym
-&sft_cap  &kp Z    &kp X    &kp C    &kp V    &kp B  &none               &mmv MOVE_DOWN               &kp K    &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RSHIFT
-                            &kp LGUI &kp LALT &kp SPACE                                               &bspc_num &kp ENTER &del_fn
+&lt NAV TAB    &kp Q    &kp W    &kp F    &kp P    &kp G                      &mmv MOVE_UP                 &kp J    &kp L    &kp U     &kp Y    &kp SEMI  &kp BSLH
+&mt LCTRL ESC  &kp A    &kp R    &kp S    &kp T    &kp D       &mmv MOVE_LEFT &mmv LCLK    &mmv MOVE_RIGHT &kp H    &kp N    &kp E     &kp I    &kp O     &sqt_sym
+&sft_cap       &kp Z    &kp X    &kp C    &kp V    &kp B  &none               &mmv MOVE_DOWN               &kp K    &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RSHIFT
+                                 &kp LGUI &kp LALT &kp SPACE                                               &lt NUM BSPC &kp ENTER &lt FN DEL
         >;
       };
 
