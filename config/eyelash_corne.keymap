@@ -103,7 +103,7 @@
 &none   &rgb_ug RGB_TOG &rgb_ug RGB_BRD  &rgb_ug RGB_BRI &rgb_ug RGB_EFF &rgb_ug RGB_EFR   &mmv MOVE_UP                         &to COL      &to DEF      &none        &none        &none        &none
 &none   &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp C_BRI_DN &kp C_BRI_UP      &mmv MOVE_LEFT &mmv LCLK    &mmv MOVE_RIGHT         &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR_ALL
 &none   &none      &none        &none        &none        &none        &none               &mmv MOVE_DOWN                       &out OUT_BLE &out OUT_USB &none        &none        &none        &none
-                                &none        &none        &none                                                                 &sys_reset   &bootloader  &none
+                                &none        &sys_reset   &bootloader                                                           &sys_reset   &bootloader  &none
         >;
       };
     };
