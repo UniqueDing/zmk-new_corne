@@ -2,6 +2,8 @@
 # Copyright (c) 2024 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 #
+#
+rsource "drivers/sensor/Kconfig"
 
 config BOARD_EYELASH_CORNE_LEFT
     bool "eyelash_corne left"
