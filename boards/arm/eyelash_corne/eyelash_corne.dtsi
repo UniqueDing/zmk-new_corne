@@ -234,7 +234,7 @@ nice_view_spi: &spi0 {
 
 &pro_micro_i2c {
     status = "okay";
-    sda-pin = <&gpio1 08 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    sda-pin = <&gpio1 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     scl-pin = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 
     tps43: trackpad@74 {
@@ -247,8 +247,8 @@ nice_view_spi: &spi0 {
         resolution-y = <1792>;
 
         /* GPIO connections */
-        rdy-gpios = <&pro_micro 8 GPIO_ACTIVE_HIGH>;  /* Interrupt pin */
-        rst-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;  /* Reset pin */
+        rdy-gpios = <&gpio1 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  /* Interrupt pin */
+        rst-gpios = <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  /* Reset pin */
 
         /* Touch settings */
         touch-threshold = <40>;
