@@ -236,15 +236,18 @@ nice_view_spi: &spi0 {
     };
 };
 
-&arduino_i2c {
+&i2c1 {
     status = "okay";
+    sda-pin = <&gpio1 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    scl-pin = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+
     tps43: iqs5xx@74 {
         status = "okay";
         compatible = "azoteq,iqs5xx";
         reg = <0x74>;
 
-        reset-gpios = <&arduino_header 14 GPIO_ACTIVE_LOW>;
-        rdy-gpios = <&arduino_header 15 GPIO_ACTIVE_HIGH>;
+        rdy-gpios = <&gpio1 7 (GPIO_ACTIVE_HIGH)>;  /* Interrupt pin */
+        reset-gpios = <&gpio1 4 (GPIO_ACTIVE_HIGH)>;  /* Reset pin */
 
         /*
          * Potentially non-exhaustive list of configuration options.
