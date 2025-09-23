@@ -43,4 +43,5 @@ CONFIG_ZMK_EXT_POWER=y
 CONFIG_I2C=y          # Enable I2C subsystem
 CONFIG_SENSOR=y       # Enable sensor subsystem
 
+CONFIG_INPUT=y
 CONFIG_INPUT_AZOTEQ_IQS5XX=y
