@@ -239,6 +239,8 @@ nice_view_spi: &spi0 {
 /**/
 &pro_micro_i2c {
     status = "okay";
+    sda-pin = <&gpio1 08 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    scl-pin = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 
     tps43: trackpad@74 {
         compatible = "azoteq,tps43";
