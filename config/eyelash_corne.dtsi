@@ -231,7 +231,7 @@ nice_view_spi: &spi0 {
     };
 };
 
-&i2c0 {
+&i2c1 {
     compatible = "nordic,nrf-twi";
     sda-pin = <&gpio1 08 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     scl-pin = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
