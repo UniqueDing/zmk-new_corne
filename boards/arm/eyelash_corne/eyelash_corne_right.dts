@@ -11,34 +11,34 @@
     col-offset = <7>;
 };
 
-&i2c1 {
-/* &pro_micro_i2c { */
-    status = "okay";
-    sda-pin = <&gpio1 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    scl-pin = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-
-    tps43: trackpad@74 {
-        compatible = "azoteq,tps43";
-        reg = <0x74>;
-
-        /* TPS43 specifications */
-        variant = "43mm";
-        resolution-x = <2048>;
-        resolution-y = <1792>;
-
-        /* GPIO connections */
-        rdy-gpios = <&gpio1 7 (GPIO_ACTIVE_HIGH)>;  /* Interrupt pin */
-        rst-gpios = <&gpio1 4 (GPIO_ACTIVE_HIGH)>;  /* Reset pin */
-
-        /* Touch settings */
-        touch-threshold = <40>;
-        max-touches = <5>;
-        palm-reject-threshold = <100>;
-
-        /* Enable features */
-        gesture-enable;
-
-        /* Communication */
-        i2c-timeout-ms = <10>;
-    };
-};
+/* &i2c1 { */
+/* /* &pro_micro_i2c { */ */
+/*     status = "okay"; */
+/*     sda-pin = <&gpio1 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; */
+/*     scl-pin = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; */
+/**/
+/*     tps43: trackpad@74 { */
+/*         compatible = "azoteq,tps43"; */
+/*         reg = <0x74>; */
+/**/
+/*         /* TPS43 specifications */ */
+/*         variant = "43mm"; */
+/*         resolution-x = <2048>; */
+/*         resolution-y = <1792>; */
+/**/
+/*         /* GPIO connections */ */
+/*         rdy-gpios = <&gpio1 7 (GPIO_ACTIVE_HIGH)>;  /* Interrupt pin */ */
+/*         rst-gpios = <&gpio1 4 (GPIO_ACTIVE_HIGH)>;  /* Reset pin */ */
+/**/
+/*         /* Touch settings */ */
+/*         touch-threshold = <40>; */
+/*         max-touches = <5>; */
+/*         palm-reject-threshold = <100>; */
+/**/
+/*         /* Enable features */ */
+/*         gesture-enable; */
+/**/
+/*         /* Communication */ */
+/*         i2c-timeout-ms = <10>; */
+/*     }; */
+/* }; */
