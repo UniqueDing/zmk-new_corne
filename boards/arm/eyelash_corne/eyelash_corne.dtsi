@@ -190,6 +190,21 @@ zephyr_udc0: &usbd {
             low-power-enable;
         };
     };
+
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 8)>,
+                <NRF_PSEL(TWIM_SCL, 0, 24)>;
+        };
+    };
+
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 8)>,
+                <NRF_PSEL(TWIM_SCL, 0, 24)>;
+            low-power-enable;
+        };
+    };
 };
 
 nice_view_spi: &spi0 {
@@ -228,5 +243,39 @@ nice_view_spi: &spi0 {
         spi-zero-frame = <0x40>;
 
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+    };
+};
+
+
+&i2c0 {
+    status = "okay";
+    compatible = "nordic,nrf-twi";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    tps43: trackpad@74 {
+        compatible = "azoteq,tps43";
+        reg = <0x74>;
+
+        /* TPS43 specifications */
+        variant = "43mm";
+        resolution-x = <2048>;
+        resolution-y = <1792>;
+
+        /* GPIO connections */
+        rdy-gpios = <&pro_micro 8 GPIO_ACTIVE_HIGH>;  /* Interrupt pin */
+        rst-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;  /* Reset pin */
+
+        /* Touch settings */
+        touch-threshold = <40>;
+        max-touches = <5>;
+        palm-reject-threshold = <100>;
+
+        /* Enable features */
+        gesture-enable;
+
+        /* Communication */
+        i2c-timeout-ms = <10>;
     };
 };
