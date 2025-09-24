@@ -1,0 +1,58 @@
+/*
+*
+* Copyright (c) 2024 The ZMK Contributors
+* SPDX-License-Identifier: MIT
+*
+*/
+
+#include "eyelash_corne.dtsi"
+
+&pinctrl {
+    i2c1_default: i2c1_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 8)>,
+                <NRF_PSEL(TWIM_SCL, 0, 24)>;
+        };
+    };
+
+    i2c1_sleep: i2c1_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 8)>,
+                <NRF_PSEL(TWIM_SCL, 0, 24)>;
+            low-power-enable;
+        };
+    };
+};
+
+&i2c1 {
+    status = "okay";
+    compatible = "nordic,nrf-twi";
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-1 = <&i2c1_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    tps43: trackpad@74 {
+        compatible = "azoteq,tps43";
+        reg = <0x74>;
+
+        /* TPS43 specifications */
+        variant = "43mm";
+        resolution-x = <2048>;
+        resolution-y = <1792>;
+
+        /* GPIO connections */
+        /* rdy-gpios = <&pro_micro 8 GPIO_ACTIVE_HIGH>;  /* Interrupt pin */ */
+        rst-gpios = <&gpio1 4 GPIO_ACTIVE_HIGH>;  /* Reset pin */
+
+        /* Touch settings */
+        touch-threshold = <10>;
+        max-touches = <5>;
+        palm-reject-threshold = <100>;
+
+        /* Enable features */
+        gesture-enable;
+
+        /* Communication */
+        i2c-timeout-ms = <10>;
+    };
+};
