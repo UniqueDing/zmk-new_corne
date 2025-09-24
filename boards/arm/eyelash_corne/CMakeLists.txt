@@ -1,0 +1,2 @@
+zephyr_library_named(azoteq_drivers)
+zephyr_library_include_directories(drivers)
