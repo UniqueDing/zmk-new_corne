@@ -4,5 +4,5 @@
 #
 #
 
-source "arm/eyelash_corne/drivers/sensor/Kconfig"
+source "drivers/sensor/Kconfig"
 
