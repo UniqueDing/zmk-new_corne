@@ -268,7 +268,7 @@ nice_view_spi: &spi0 {
         rst-gpios = <&gpio1 4 GPIO_ACTIVE_HIGH>;  /* Reset pin */
 
         /* Touch settings */
-        touch-threshold = <40>;
+        touch-threshold = <10>;
         max-touches = <5>;
         palm-reject-threshold = <100>;
 
