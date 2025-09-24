@@ -2,6 +2,7 @@
  * Copyright (c) 2025 Mariano Uvalle
  * SPDX-License-Identifier: MIT
  */
+bugbug
 
 #define DT_DRV_COMPAT azoteq_iqs5xx
 
