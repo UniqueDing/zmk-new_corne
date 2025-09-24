@@ -265,7 +265,7 @@ nice_view_spi: &spi0 {
 
         /* GPIO connections */
         /* rdy-gpios = <&pro_micro 8 GPIO_ACTIVE_HIGH>;  /* Interrupt pin */ */
-        rst-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;  /* Reset pin */
+        rst-gpios = <&gpio1 4 GPIO_ACTIVE_HIGH>;  /* Reset pin */
 
         /* Touch settings */
         touch-threshold = <40>;
