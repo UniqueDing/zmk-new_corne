@@ -33,4 +33,4 @@ config ZMK_SENSOR_TPS43_SENSITIVITY
 	help
 	  The sensitivity of the sensor.
 
-endif 
+endif

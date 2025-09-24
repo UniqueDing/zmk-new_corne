@@ -4,7 +4,7 @@
 #
 #
 
-rsource "drivers/sensor/Kconfig"
+rsource "../../../drivers/sensor/Kconfig"
 
 config BOARD_EYELASH_CORNE_LEFT
     bool "eyelash_corne left"
