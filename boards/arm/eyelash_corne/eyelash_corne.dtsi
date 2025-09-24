@@ -195,6 +195,21 @@ zephyr_udc0: &usbd {
             low-power-enable;
         };
     };
+
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 8)>,
+                <NRF_PSEL(TWIM_SCL, 0, 24)>;
+        };
+    };
+
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 8)>,
+                <NRF_PSEL(TWIM_SCL, 0, 24)>;
+            low-power-enable;
+        };
+    };
 };
 
 nice_view_spi: &spi0 {
@@ -236,10 +251,12 @@ nice_view_spi: &spi0 {
     };
 };
 
-&i2c1 {
+&i2c0 {
     status = "okay";
-    sda-pin = <&gpio1 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    scl-pin = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    compatible = "nordic,nrf-twi";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
 
     tps43: iqs5xx@74 {
         status = "okay";
