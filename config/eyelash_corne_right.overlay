@@ -5,8 +5,6 @@
 *
 */
 
-#include "eyelash_corne.dtsi"
-
 &pinctrl {
     i2c1_default: i2c1_default {
         group1 {
