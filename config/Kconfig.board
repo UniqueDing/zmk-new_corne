@@ -1,0 +1,8 @@
+#
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+#
+#
+
+source "arm/eyelash_corne/drivers/sensor/Kconfig"
+
