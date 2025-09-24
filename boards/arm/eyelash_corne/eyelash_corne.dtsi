@@ -191,14 +191,14 @@ zephyr_udc0: &usbd {
         };
     };
 
-    i2c0_default: i2c0_default {
+    i2c1_default: i2c1_default {
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 1, 8)>,
                 <NRF_PSEL(TWIM_SCL, 0, 24)>;
         };
     };
 
-    i2c0_sleep: i2c0_sleep {
+    i2c1_sleep: i2c1_sleep {
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 1, 8)>,
                 <NRF_PSEL(TWIM_SCL, 0, 24)>;
@@ -247,11 +247,11 @@ nice_view_spi: &spi0 {
 };
 
 
-&i2c0 {
+&i2c1 {
     status = "okay";
     compatible = "nordic,nrf-twi";
-    pinctrl-0 = <&i2c0_default>;
-    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-1 = <&i2c1_sleep>;
     pinctrl-names = "default", "sleep";
 
     tps43: trackpad@74 {
@@ -265,7 +265,7 @@ nice_view_spi: &spi0 {
 
         /* GPIO connections */
         /* rdy-gpios = <&pro_micro 8 GPIO_ACTIVE_HIGH>;  /* Interrupt pin */ */
-        /* rst-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;  /* Reset pin */ */
+        rst-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;  /* Reset pin */
 
         /* Touch settings */
         touch-threshold = <40>;
