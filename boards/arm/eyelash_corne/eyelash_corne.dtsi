@@ -27,11 +27,6 @@
         zmk,backlight = &backlight;
     };
 
-    tps43_input: tps43_input {
-        compatible = "zmk,input-listener";
-        device = <&tps43>;
-    };
-
     vbatt: vbatt {
         compatible = "zmk,battery-nrf-vddh";
     };
@@ -95,6 +90,11 @@
         pwm_led_0 {
             pwms = <&pwm0 0 PWM_MSEC(1) PWM_POLARITY_NORMAL>;
         };
+    };
+
+    tps43_input: tps43_input {
+        compatible = "zmk,input-listener";
+        device = <&tps43>;
     };
 };
 
@@ -252,14 +252,14 @@ nice_view_spi: &spi0 {
 };
 
 &i2c0 {
-    status = "okay";
+    status = "disabled";
     compatible = "nordic,nrf-twi";
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
 
     tps43: iqs5xx@74 {
-        status = "okay";
+        status = "disabled";
         compatible = "azoteq,iqs5xx";
         reg = <0x74>;
 
