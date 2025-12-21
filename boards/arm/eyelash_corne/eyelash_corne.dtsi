@@ -92,10 +92,10 @@
         };
     };
 
-    tps43_input: tps43_input {
-        compatible = "zmk,input-listener";
-        device = <&tps43>;
-    };
+    /* tps43_input: tps43_input { */
+    /*     compatible = "zmk,input-listener"; */
+    /*     device = <&tps43>; */
+    /* }; */
 };
 
 &adc {
@@ -251,38 +251,38 @@ nice_view_spi: &spi0 {
     };
 };
 
-&i2c1 {
-    status = "disabled";
-    compatible = "nordic,nrf-twim";
-    pinctrl-0 = <&i2c1_default>;
-    pinctrl-1 = <&i2c1_sleep>;
-    pinctrl-names = "default", "sleep";
-    clock-frequency = <I2C_BITRATE_FAST>;
-
-    tps43: iqs5xx@74 {
-        status = "disabled";
-        compatible = "azoteq,iqs5xx";
-        reg = <0x74>;
-
-        reset-gpios = <&gpio1 4 GPIO_ACTIVE_LOW>;  /* Reset pin */
-        rdy-gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;  /* Interrupt pin */
-
-        /*
-         * Potentially non-exhaustive list of configuration options.
-         * See: dts/bindings/input/azoteq,iqs5xx-common.yaml for a full list.
-         */
-        one-finger-tap;
-        press-and-hold;
-        press-and-hold-time = <250>;
-        two-finger-tap;
-
-        scroll;
-        natural-scroll-y;
-        natural-scroll-x;
-
-        bottom-beta = <5>;
-        stationary-threshold = <5>;
-
-        switch-xy;
-    };
-};
+/* &i2c1 { */
+/*     status = "disabled"; */
+/*     compatible = "nordic,nrf-twim"; */
+/*     pinctrl-0 = <&i2c1_default>; */
+/*     pinctrl-1 = <&i2c1_sleep>; */
+/*     pinctrl-names = "default", "sleep"; */
+/*     clock-frequency = <I2C_BITRATE_FAST>; */
+/**/
+/*     tps43: iqs5xx@74 { */
+/*         status = "disabled"; */
+/*         compatible = "azoteq,iqs5xx"; */
+/*         reg = <0x74>; */
+/**/
+/*         reset-gpios = <&gpio1 4 GPIO_ACTIVE_LOW>;  /* Reset pin */ */
+/*         rdy-gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;  /* Interrupt pin */ */
+/**/
+/*         /* */
+/*          * Potentially non-exhaustive list of configuration options. */
+/*          * See: dts/bindings/input/azoteq,iqs5xx-common.yaml for a full list. */
+/*          */ */
+/*         one-finger-tap; */
+/*         press-and-hold; */
+/*         press-and-hold-time = <250>; */
+/*         two-finger-tap; */
+/**/
+/*         scroll; */
+/*         natural-scroll-y; */
+/*         natural-scroll-x; */
+/**/
+/*         bottom-beta = <5>; */
+/*         stationary-threshold = <5>; */
+/**/
+/*         switch-xy; */
+/*     }; */
+/* }; */
