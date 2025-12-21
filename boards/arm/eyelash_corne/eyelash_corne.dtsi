@@ -264,13 +264,13 @@ nice_view_spi: &spi0 {
 /*         compatible = "azoteq,iqs5xx"; */
 /*         reg = <0x74>; */
 /**/
-/*         reset-gpios = <&gpio1 4 GPIO_ACTIVE_LOW>;  /* Reset pin */ */
-/*         rdy-gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;  /* Interrupt pin */ */
+/*         reset-gpios = <&gpio1 4 GPIO_ACTIVE_LOW>;  /* Reset pin */
+/*         rdy-gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;  /* Interrupt pin */
 /**/
-/*         /* */
+/*         /*
 /*          * Potentially non-exhaustive list of configuration options. */
 /*          * See: dts/bindings/input/azoteq,iqs5xx-common.yaml for a full list. */
-/*          */ */
+/*          */
 /*         one-finger-tap; */
 /*         press-and-hold; */
 /*         press-and-hold-time = <250>; */
