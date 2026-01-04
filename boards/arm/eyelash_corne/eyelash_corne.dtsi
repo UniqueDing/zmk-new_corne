@@ -96,11 +96,6 @@
         compatible = "zmk,input-listener";
         device = <&tps43>;
     };
-
-
-
-
-
 };
 
 &adc {
